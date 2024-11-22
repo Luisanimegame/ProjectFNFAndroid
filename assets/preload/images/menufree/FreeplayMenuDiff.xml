@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="FreeplayMenuDiff.png">
+  <SubTexture name="boynormal white0000" x="0" y="0"  width="992" height="720" frameX="-0" frameY="-0" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="girlereto white0000" x="992" y="0"  width="992" height="720" frameX="-288" frameY="-0" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="boynormal basic0000" x="1984" y="0"  width="362" height="604" frameX="-214" frameY="-50" frameWidth="1280" frameHeight="720"/>
+  <SubTexture name="girlereto basic0000" x="2346" y="0"  width="362" height="604" frameX="-704" frameY="-50" frameWidth="1280" frameHeight="720"/>
+</TextureAtlas>
