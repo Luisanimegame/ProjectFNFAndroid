@@ -18,7 +18,7 @@ import flixel.addons.display.FlxTiledSprite;
 
 using StringTools;
 
-class MainMenuState extends MusicBeatState
+class THENEWMENUState extends MusicBeatState
 {
 	var curSelected:Int = 0;
 
