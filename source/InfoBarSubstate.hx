@@ -66,7 +66,7 @@ class InfoBarSubstate extends FlxSubState
     }
 
     override public function update(elapsed:Float) {
-        if (FlxG.keys.justPressed.ESCAPE) {
+        if (FlxG.keys.justPressed.ESCAPE #if android || FlxG.android.justReleased.BACK #end) {
             exit();
         }
 

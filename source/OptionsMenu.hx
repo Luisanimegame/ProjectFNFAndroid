@@ -78,6 +78,11 @@ class OptionsMenu extends MusicBeatState
 		//		viewer.frames = Paths.getSparrowAtlas('notes/' + FlxG.save.data.notetheme + '_assets', 'shared');
 
 		noteselection = notetypes.indexOf(FlxG.save.data.notetheme);
+		
+		#if mobile
+		addVirtualPad(LEFT_FULL, A_B_C);
+		#end
+		
 		super.create();
 		changeSelection();
 		//	openSubState(new OptionsSubState());
@@ -129,6 +134,13 @@ class OptionsMenu extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		
+		#if mobile
+			if (virtualPad.buttonC.justPressed) {
+			  removeVirtualPad();
+			  openSubState(new mobile.MobileControlsSubState());
+			}
+		#end
 
 		if (controls.ACCEPT)
 		{

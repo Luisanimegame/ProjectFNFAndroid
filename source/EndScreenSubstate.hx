@@ -102,7 +102,16 @@ class EndScreenSubstate extends FlxSubState
     }
 
     override public function update(elapsed:Float) {
-        if (FlxG.keys.justPressed.ENTER) {
+    
+    #if mobile
+        var jusTouched:Bool = false;
+
+        for (touch in FlxG.touches.list)
+          if (touch.justPressed)
+            jusTouched = true;
+        #end
+    
+        if (FlxG.keys.justPressed.ENTER #if mobile || jusTouched #end) {
             close();
         }
         super.update(elapsed);

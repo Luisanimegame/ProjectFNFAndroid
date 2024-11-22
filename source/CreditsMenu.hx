@@ -54,6 +54,11 @@ class CreditsMenu extends MusicBeatState
 			add(grpControls);
 			changeSelection();
 		});
+		
+		#if mobile
+        addVirtualPad(UP_DOWN, A_B);
+        #end
+		
 		super.create();
 	}
 
@@ -75,6 +80,8 @@ class CreditsMenu extends MusicBeatState
 					FlxG.openURL("https://youtube.com/channel/UCVgVvwOzvsR8pRwVy316SyA");
 				case 5:
 					FlxG.openURL("https://twitter.com/ninja_muffin99");
+				case 6:
+					FlxG.openURL("https://youtube.com/@gabewuzx?si=149IlO-krqtY1Mv0");
 			}
 		//	var funnystring = Std.string(curSelected);
 		//	FlxG.openURL(funnystring); 

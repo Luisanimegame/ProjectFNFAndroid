@@ -871,6 +871,10 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		infoTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+		
+		#if mobile
+		addMobileControls();
+		#end
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -1054,6 +1058,10 @@ class PlayState extends MusicBeatState
 	function startCountdown():Void
 	{
 		inCutscene = false;
+		
+		#if mobile
+		mobileControls.visible = true;
+		#end
 
 		generateStaticArrows(0);
 		generateStaticArrows(1);
@@ -1787,7 +1795,7 @@ class PlayState extends MusicBeatState
 		if (FlxG.keys.justPressed.ENTER && endingSong) {
 			nextSong();
 		}
-		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
+		if (FlxG.keys.justPressed.ENTER #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -2398,6 +2406,9 @@ class PlayState extends MusicBeatState
 		inCutscene = true;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
+		#if mobile
+		mobileControls.visible = false;
+		#end
 		if (SONG.validScore)
 		{
 			#if !switch
