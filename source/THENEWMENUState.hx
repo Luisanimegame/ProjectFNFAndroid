@@ -205,6 +205,11 @@ class THENEWMENUState extends MusicBeatState
 										FlxG.switchState(new FPlayEretoState());
 
 										trace("Erect Menu Selected");
+										
+									case 'options':
+										FlxTransitionableState.skipNextTransIn = true;
+										FlxTransitionableState.skipNextTransOut = true;
+										FlxG.switchState(new OptionsMenu());
 								}
 							});
 						}
