@@ -16,7 +16,7 @@ import lime.app.Application;
 
 using StringTools;
 
-class FreeplayState extends MusicBeatState
+class FreeplayStateEreto extends MusicBeatState
 {
 	var songs:Array<SongMetadata> = [];
 

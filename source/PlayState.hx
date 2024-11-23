@@ -2398,9 +2398,6 @@ class PlayState extends MusicBeatState
 	public function endSong():Void
 	{
 		trace("Song1");
-/*openSubState(new EndScreenSubstate(totalAccuracy, songNotesHit, songNotesMissed, miss, shit, bad, good, sick, songScore, camHUD));
-		persistentUpdate = false;
-		persistentDraw = false;*/
 		canPause = false;
 		paused = true;
 		inCutscene = true;
