@@ -202,7 +202,6 @@ class THENEWMENUState extends MusicBeatState
 										FlxG.switchState(new FreeplayState());
 									case 'girlereto':
 										//FlxG.switchState(new FPlayEretoState());
-										FlxG.switchState(new FPlayEretoState());
 								}
 							});
 						}
