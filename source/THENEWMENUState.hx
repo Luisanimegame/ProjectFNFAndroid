@@ -202,9 +202,9 @@ class THENEWMENUState extends MusicBeatState
 										FlxG.switchState(new FreeplayState());
 										trace("Freeplay Menu Selected");
 									case 'girlereto':
-										FlxG.switchState(new FreeplayStateEreto());
+										FlxG.switchState(new FPlayEretoState());
 
-										trace("Freeplay Erect Menu Selected");
+										trace("Erect Menu Selected");
 								}
 							});
 						}
