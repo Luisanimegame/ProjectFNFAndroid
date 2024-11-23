@@ -198,10 +198,10 @@ class THENEWMENUState extends MusicBeatState
 
 								switch (daChoice)
 								{
-									case 'boynormal':
-										FlxG.switchState(new FreeplayState());
 									case 'girlereto':
 										FlxG.switchState(new FPlayEretoState());
+									case 'boynormal':
+										FlxG.switchState(new FreeplayState());
 								}
 							});
 						}
