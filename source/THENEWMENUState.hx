@@ -200,16 +200,8 @@ class THENEWMENUState extends MusicBeatState
 								{
 									case 'boynormal':
 										FlxG.switchState(new FreeplayState());
-										trace("Freeplay Menu Selected");
 									case 'girlereto':
 										FlxG.switchState(new FPlayEretoState());
-
-										trace("Erect Menu Selected");
-										
-									case 'options':
-										FlxTransitionableState.skipNextTransIn = true;
-										FlxTransitionableState.skipNextTransOut = true;
-										FlxG.switchState(new OptionsMenu());
 								}
 							});
 						}
