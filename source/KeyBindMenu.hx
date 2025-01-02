@@ -3,6 +3,7 @@ package;
 /// Code created by Rozebud for FPS Plus (thanks rozebud)
 // modified by KadeDev for use in Kade Engine/Tricky
 
+import Controls.Control;
 import flixel.util.FlxAxes;
 import flixel.FlxSubState;
 import flixel.input.FlxInput;

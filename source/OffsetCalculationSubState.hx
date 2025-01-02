@@ -6,6 +6,7 @@ import flixel.util.FlxColor;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.FlxSprite;
+import Controls.Control;
 import flixel.FlxSubState;
 import flixel.text.FlxText;
 import flixel.FlxState;
