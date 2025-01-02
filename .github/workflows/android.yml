@@ -47,7 +47,7 @@ jobs:
           haxelib install openfl 9.1.0
           haxelib install flixel 5.2.2
           haxelib install flixel-tools
-          haxelib install flixel-ui
+          haxelib install flixel-ui 2.6.1
           haxelib install flixel-addons 3.0.2
           haxelib install tjson
           haxelib install hxCodec
@@ -114,6 +114,6 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
-          name: Project Build
+          name: KadeEngine
           path: export/release/android/bin/app/build/outputs/apk/debug
           if-no-files-found: warn
