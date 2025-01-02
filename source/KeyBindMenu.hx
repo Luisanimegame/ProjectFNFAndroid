@@ -88,6 +88,10 @@ class KeyBindMenu extends FlxSubState
         OptionsMenu.instance.acceptInput = false;
 
         textUpdate();
+        
+        #if mobile
+        addVirtualPad(LEFT_FULL, A_B_C);
+        #end
 
 		super.create();
 	}
@@ -98,26 +102,26 @@ class KeyBindMenu extends FlxSubState
         switch(state){
 
             case "select":
-                if (FlxG.keys.justPressed.UP)
+                if (controls.UP_P)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changeItem(-1);
 				}
 
-				if (FlxG.keys.justPressed.DOWN)
+				if (controls.DOWN_P)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changeItem(1);
 				}
 
-                if (FlxG.keys.justPressed.ENTER){
+                if (controls.ACCEPT){
                     FlxG.sound.play(Paths.sound('scrollMenu'));
                     state = "input";
                 }
-                else if(FlxG.keys.justPressed.ESCAPE){
+                else if(controls.BACK){
                     quit();
                 }
-				else if (FlxG.keys.justPressed.BACKSPACE){
+				else if (FlxG.keys.justPressed.BACKSPACE #if mobile || virtualPad.buttonC.justPressed #end){
                     reset();
                 }
 

@@ -43,6 +43,10 @@ class OffsetCalculationSubState extends FlxSubState
         funny.alpha = 0;
         FlxTween.tween(blackBox, {alpha: 0.7}, 1, {ease: FlxEase.expoInOut});
         FlxTween.tween(funny, {alpha: 1}, 1, {ease: FlxEase.expoInOut});
+        
+        #if mobile
+        addVirtualPad(NONE, A_B_C);
+        #end
 
         super.create();
     }
@@ -50,7 +54,7 @@ class OffsetCalculationSubState extends FlxSubState
     override public function update(elapsed:Float):Void
     {
      //   trace(started);
-        if (FlxG.keys.justPressed.SPACE) {
+        if (FlxG.keys.justPressed.SPACE #if mobile || virtualPad.buttonC.justPressed #end) {
             if (!started) {
                 started = true;
                 timer = new haxe.Timer(1); // 1ms delay
@@ -72,13 +76,13 @@ class OffsetCalculationSubState extends FlxSubState
             }
         }
 
-        if (FlxG.keys.justPressed.ESCAPE) {
+        if (controls.BACK) {
             timer.run = function() {
 
             }
             close();
         }
-        if (FlxG.keys.justPressed.ENTER) {
+        if (controls.ACCEPT) {
             timer.run = function() {
                 
             }
