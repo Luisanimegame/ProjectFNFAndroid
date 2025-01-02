@@ -6,7 +6,6 @@ import flixel.util.FlxColor;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.FlxSprite;
-import Controls.Control;
 import flixel.FlxSubState;
 import flixel.text.FlxText;
 import flixel.FlxState;
@@ -44,10 +43,6 @@ class OffsetCalculationSubState extends FlxSubState
         funny.alpha = 0;
         FlxTween.tween(blackBox, {alpha: 0.7}, 1, {ease: FlxEase.expoInOut});
         FlxTween.tween(funny, {alpha: 1}, 1, {ease: FlxEase.expoInOut});
-        
-        #if mobile
-        addVirtualPad(NONE, A_B_C);
-        #end
 
         super.create();
     }
@@ -55,7 +50,7 @@ class OffsetCalculationSubState extends FlxSubState
     override public function update(elapsed:Float):Void
     {
      //   trace(started);
-        if (FlxG.keys.justPressed.SPACE #if mobile || virtualPad.buttonC.justPressed #end) {
+        if (FlxG.keys.justPressed.SPACE) {
             if (!started) {
                 started = true;
                 timer = new haxe.Timer(1); // 1ms delay
@@ -77,13 +72,13 @@ class OffsetCalculationSubState extends FlxSubState
             }
         }
 
-        if (controls.BACK) {
+        if (FlxG.keys.justPressed.ESCAPE) {
             timer.run = function() {
 
             }
             close();
         }
-        if (controls.ACCEPT) {
+        if (FlxG.keys.justPressed.ENTER) {
             timer.run = function() {
                 
             }

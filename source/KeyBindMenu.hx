@@ -3,7 +3,6 @@ package;
 /// Code created by Rozebud for FPS Plus (thanks rozebud)
 // modified by KadeDev for use in Kade Engine/Tricky
 
-import Controls.Control;
 import flixel.util.FlxAxes;
 import flixel.FlxSubState;
 import flixel.input.FlxInput;
@@ -89,10 +88,6 @@ class KeyBindMenu extends FlxSubState
         OptionsMenu.instance.acceptInput = false;
 
         textUpdate();
-        
-        #if mobile
-        addVirtualPad(LEFT_FULL, A_B_C);
-        #end
 
 		super.create();
 	}
@@ -103,26 +98,26 @@ class KeyBindMenu extends FlxSubState
         switch(state){
 
             case "select":
-                if (controls.UP_P)
+                if (FlxG.keys.justPressed.UP)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changeItem(-1);
 				}
 
-				if (controls.DOWN_P)
+				if (FlxG.keys.justPressed.DOWN)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changeItem(1);
 				}
 
-                if (controls.ACCEPT){
+                if (FlxG.keys.justPressed.ENTER){
                     FlxG.sound.play(Paths.sound('scrollMenu'));
                     state = "input";
                 }
-                else if(controls.BACK){
+                else if(FlxG.keys.justPressed.ESCAPE){
                     quit();
                 }
-				else if (FlxG.keys.justPressed.BACKSPACE #if mobile || virtualPad.buttonC.justPressed #end){
+				else if (FlxG.keys.justPressed.BACKSPACE){
                     reset();
                 }
 
